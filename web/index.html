@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-accent="cinnabar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>岁纪 · 万年历与倒数日</title>
+  <link rel="icon" type="image/svg+xml" href="../logo.svg">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    /* OTools 宿主桥标记：运行时由 js/bridge.js 接管 window.otools / window.utools / Tauri IPC */
+    window.MC = window.MC || {};
+    window.MC.otoolsHost = window.otools || window.utools || null;
+  </script>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="paper-grain"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+            <rect x="6" y="8" width="28" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M6 15h28M13 5v7M27 5v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="20" cy="24" r="5" fill="currentColor" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="brand-text"><strong>岁纪</strong><span>CHRONOS ALMANAC</span></div>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="主导航"></nav>
+
+      <div class="sidebar-foot">
+        <div class="privacy-badge">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <span>本机存储 · 完全离线</span>
+        </div>
+        <span class="side-version">v1.0.0 · 1900–2100</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1 id="page-title">今日</h1>
+          <p id="page-sub">一本历书，和属于你的日子</p>
+        </div>
+        <div class="topbar-actions">
+          <span class="date-chip" id="top-date"></span>
+          <button class="icon-btn" data-action="theme-quick" aria-label="切换主题"><span id="theme-icon"></span></button>
+          <button class="btn btn-primary btn-sm" data-action="new-event">
+            <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            新建日子
+          </button>
+        </div>
+      </header>
+
+      <div id="reminder-slot"></div>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <div id="overlay" class="overlay-root"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script src="js/util.js"></script>
+  <script src="js/bridge.js"></script>
+  <script src="js/calendar-data.js"></script>
+  <script src="js/holidays.js"></script>
+  <script src="js/lunar.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/views/today.js"></script>
+  <script src="js/views/calendar.js"></script>
+  <script src="js/views/events.js"></script>
+  <script src="js/views/almanac.js"></script>
+  <script src="js/views/tools.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/views/onboarding.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
